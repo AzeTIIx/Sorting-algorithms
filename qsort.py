@@ -71,7 +71,7 @@ def splitlist(a, low, high):
 
 def qsort(a, low, high):
     """
-    Effectue un Quic Sort sur la liste a
+    Effectue un Quick Sort sur la liste a
 
     Args:
         -a
