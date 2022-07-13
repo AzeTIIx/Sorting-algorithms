@@ -1,5 +1,6 @@
 import random
 from random import randint
+import time
 
 
 def inputs():
@@ -35,9 +36,12 @@ def rand():
         -a
     """
     
+
     n = int(input("Entrez la taille de la liste\n"))
-    a = [i for i in range(1, n + 1)]
-    random.shuffle(a)
+    a = []
+    for i in range(0, n):
+        e = random.randint(1, n)
+        a.append(e)
     print("Liste non triée : {0}\n" .format(a))
     return a
 
@@ -47,12 +51,12 @@ def splitlist(a, low, high):
     Effectue une section de la liste "a" par la droite (pivot = membre 
     de la liste le plus haut)
 
-    Args:
+    Args :
         -a 
         -low
         -high
 
-    Returns:
+    Returns :
         -index + 1 
     """
     pivot = a[high]
@@ -73,19 +77,21 @@ def qsort(a, low, high):
     """
     Effectue un Quick Sort sur la liste a
 
-    Args:
+    Args :
         -a
         -low
         -high 
 
-    Returns:
+    Returns :
         -a (sorted)
     """
+    
     if low < high:
         pi = splitlist(a, low, high)
         qsort(a, low, pi-1)
         qsort(a, pi+1, high)
         return a
+
     
         
 
@@ -103,17 +109,24 @@ def main():
     if ans == '1':
         a, l = inputs()
     elif ans =='2':
+        start = time.perf_counter()
         a = rand()
+        end = time.perf_counter()
+        elapsed = end - start
+        print(f'Temps de génération : {elapsed:.2}ms \n')
     else :
         print("Entrez une valeure valide (1 ou 2).")
         exit(0)
     low = a[0]
     high = a[-1]
+    start = time.perf_counter()
     qsort(a, 0, len(a) - 1)
+    end = time.perf_counter()
+    elapsed = end - start
     print(f"Liste triée : {a}")
+    print(f'Temps de tri : {elapsed:.2}ms \n')
     
     
     
 if __name__ =="__main__":
     main()
-    
