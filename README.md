@@ -2,9 +2,9 @@
 
 <h3>My implementations</h3>
 <ul>
-  <li><a href="#qsort">Quick sort</a></li>
-  <li><a href="#msort">Merge sort</a></li>
-  <li><a href="#bsort">Bubble sort</a></li>
+  <li><a href="#--qsort-">Quick sort</a></li>
+  <li><a href="#--msort-">Merge sort</a></li>
+  <li><a href="#--bsort-">Bubble sort</a></li>
 </ul>
 
 <h4>Inputs options</h4> 
